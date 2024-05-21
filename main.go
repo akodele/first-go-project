@@ -9,11 +9,15 @@ func main() {
 
 	var name string
 	fmt.Println("Enter your name:")
-	scan, err := fmt.Scanf("%s\n", &name)
-	if err == nil && scan > 0 {
-		text := greet.Greet(name)
+	scan1, err1 := fmt.Scanf("%s\n", &name)
+	var table int
+	fmt.Println("Enter your table:")
+	scan2, err2 := fmt.Scanf("%d\n", &table)
+	if err1 == nil && scan1 > 0 && err2 == nil && scan2 > 0 {
+		text := greet.Greet(name, table)
 		fmt.Println(text)
 	} else {
-		fmt.Println("Incorrect name")
+		fmt.Println(err1)
+		fmt.Println(err2)
 	}
 }
